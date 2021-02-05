@@ -30,5 +30,12 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        viewModel.testString.observe(this, Observer{ result ->
+            if (result == null) {
+                liveData_test.text = "Null 값입니다."
+            } else {
+                liveData_test.text = result
+            }
+        })
     }
 }
